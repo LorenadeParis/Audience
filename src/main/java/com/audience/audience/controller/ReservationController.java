@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 
 @RestController
-@RequestMapping("/api/reservation")
+@RequestMapping("/api/Reservation")
 public class ReservationController {
     
     @Autowired
