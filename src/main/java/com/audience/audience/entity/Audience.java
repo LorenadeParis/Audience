@@ -22,11 +22,11 @@ public class Audience implements Serializable  {
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="audience")
-    @JsonIgnoreProperties("audience")
+    @JsonIgnoreProperties({"audience","reservations","category","client"})
     public List<Message>messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="audience")
-    @JsonIgnoreProperties("audience") 
+    @JsonIgnoreProperties({"audience","reservations","category","client"}) 
     public List<Reservation>reservations;
 
     public Integer getId() {

@@ -14,16 +14,19 @@ public class Reservation {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status;
+    private String status = "created";
+
     @ManyToOne
     @JoinColumn(name="audienceId")
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JsonIgnoreProperties("reservations")
     private Audience audience;
 
     @ManyToOne
     @JoinColumn(name="clientId")
     @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
+
+    private String score ;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -61,6 +64,13 @@ public class Reservation {
     }
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public String getScore() {
+        return score;
+    }
+    public void setScore(String score) {
+        this.score = score;
     }
    
 

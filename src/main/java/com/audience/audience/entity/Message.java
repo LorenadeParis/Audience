@@ -13,14 +13,15 @@ public class Message {
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name="clientId")
-    @JsonIgnoreProperties("messages")
-    private Client client;
+    @JoinColumn(name="audienceId")
+    @JsonIgnoreProperties({"messages","client","audiences","reservations"})
+    private Audience audience;
 
     @ManyToOne
-    @JoinColumn(name="audienceId")
-    @JsonIgnoreProperties("messages")
-    private Audience audience;
+    @JoinColumn(name="clientId")
+    @JsonIgnoreProperties({"messages","client","audiences","reservations","category"})
+    private Client client;
+
 
     public Integer getIdMessage() {
         return idMessage;

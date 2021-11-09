@@ -18,11 +18,11 @@ public class Client {
     private String age;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"client","audience","reservations","category"})
     public List<Message>messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"client","audience","reservations","category"})
     public List<Reservation>reservations;
 
     public Integer getIdCliente() {
