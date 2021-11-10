@@ -13,9 +13,10 @@ public class Audience implements Serializable  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
     private String owner;
     private Integer capacity;
+    private String name;
+    private String description;
     @ManyToOne
     @JoinColumn(name="category_id")
     @JsonIgnoreProperties("audiences")
@@ -59,6 +60,14 @@ public class Audience implements Serializable  {
     
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
     }
  
     public Category getCategory() {
