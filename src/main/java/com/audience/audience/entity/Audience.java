@@ -33,7 +33,19 @@ public class Audience implements Serializable  {
     public Integer getId() {
         return id;
     }
-    
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getOwner() {
         return owner;
     }
@@ -50,26 +62,14 @@ public class Audience implements Serializable  {
         this.capacity = capacity;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
- 
+
     public Category getCategory() {
         return category;
     }
@@ -78,7 +78,6 @@ public class Audience implements Serializable  {
         this.category = category;
     }
 
-    
     public List<Message> getMessages() {
         return messages;
     }
@@ -94,5 +93,6 @@ public class Audience implements Serializable  {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+  
 
 }
