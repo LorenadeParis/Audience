@@ -25,5 +25,9 @@ public class AudienceRepository {
     public Audience save(Audience Audience){
         return iAudienceRepository.save(Audience);
     }
+
+    public void delete(int id){
+        iAudienceRepository.deleteById(id);
+   }
     
 }

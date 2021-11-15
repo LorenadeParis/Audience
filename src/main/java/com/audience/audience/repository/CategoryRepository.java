@@ -25,5 +25,9 @@ public class CategoryRepository {
     public Category save(Category category){
         return iCategoryRepository.save(category);
     }
+
+    public void delete(int id){
+         iCategoryRepository.deleteById(id);
+    }
     
 }

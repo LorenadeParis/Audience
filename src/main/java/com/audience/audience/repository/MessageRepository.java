@@ -25,5 +25,9 @@ public class MessageRepository {
     public Message save(Message Message){
         return iMessageRepository.save(Message);
     }
+
+    public void delete(int id){
+        iMessageRepository.deleteById(id);
+    }
     
 }

@@ -25,4 +25,7 @@ public class ReservationRepository {
         return iReservationRepository.save(Reservation);
     }
     
+    public void delete(int id){
+        iReservationRepository.deleteById(id);
+    }
 }
