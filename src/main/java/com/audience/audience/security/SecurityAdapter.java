@@ -16,11 +16,12 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
         */
         http.authorizeRequests(a -> a
                 .antMatchers("/", "/error", "/webjars/**",
-                        "/api/**").permitAll()
+                "/api/Audience/**","/api/Category/**","/api/Client/**",
+                "/api/Message/**","/api/Reservation/**","/user/**").permitAll()
                 .anyRequest().authenticated()
         ).exceptionHandling(e -> e
                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-        ).oauth2Login().defaultSuccessUrl("/privado.html", true);
+        ).oauth2Login();
 
         http.cors().and().csrf().disable();
 
